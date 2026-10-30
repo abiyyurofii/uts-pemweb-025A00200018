@@ -1,61 +1,39 @@
 <?php
-
 declare(strict_types=1);
-
+require_once 'functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - Gentleman Barbershop</title>
+    <title>Profil - BarberStudio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <h1>Gentleman Barbershop</h1>
-        <p>Gaya Rambut Maskulin & Pelayanan Profesional</p>
+        <h1>BarberStudio Premium</h1>
+        <nav>
+            <a href="index.php">Profil</a>
+            <a href="katalog.php">Katalog Layanan</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="index.php">Profil Usaha</a>
-        <a href="katalog.php">Katalog Layanan</a>
-    </nav>
-
     <main>
-        <section class="hero">
-            <h2>Selamat Datang di Gentleman Barbershop</h2>
-            <p>Kami menyediakan layanan potong rambut dan perawatan diri khusus pria dengan standar kualitas terbaik dan tempat yang nyaman.</p>
-        </section>
+        <section class="container">
+            <h2>Tentang BarberStudio</h2>
+            <p>BarberStudio adalah tempat perawatan rambut dan gaya pria modern yang mengedepankan kualitas pengerjaan dan kenyamanan pelanggan.</p>
 
-        <section>
-            <h2>Tentang Kami</h2>
-            <p>Berdiri sejak tahun 2020, Gentleman Barbershop berfokus pada kepuasan pelanggan dengan menghadirkan para kapster berpengalaman. Kami memadukan gaya potong rambut klasik dan tren modern.</p>
-        </section>
-
-        <section>
-            <h2>Informasi Operasional</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Jam Buka</h3>
-                    <p>Senin - Minggu: 09.00 - 21.00 WIB</p>
-                </div>
-                <div class="info-card">
-                    <h3>Lokasi</h3>
-                    <p>Jl. Utama No. 123, Surakarta</p>
-                </div>
-                <div class="info-card">
-                    <h3>Kontak</h3>
-                    <p>WhatsApp: 0812-3456-7890</p>
-                </div>
-            </div>
+            <h3 style="margin-top: 15px;">Jam Operasional</h3>
+            <ul>
+                <li>Senin - Jumat: 09:00 - 21:00 WIB</li>
+                <li>Sabtu - Minggu: 08:00 - 22:00 WIB</li>
+            </ul>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> Gentleman Barbershop - UTS Pemrograman Web</p>
+    <footer style=""> 
+        <p>&copy; 2026 BarberStudio UTS Pemweb</p>
     </footer>
-
 </body>
 </html>

@@ -1,70 +1,68 @@
 <?php
-
 declare(strict_types=1);
-
-$daftarLayanan = [
+$layanan_barbershop = [
     [
         'id' => 1,
         'nama' => 'Classic Haircut',
-        'kategori' => 'Haircut',
-        'harga' => 45000,
-        'durasi' => 30,
-        'populer' => true,
+        'kategori' => 'Potong Rambut',
+        'harga' => 35000,
+        'durasi_menit' => 30,
+        'populer' => true
     ],
     [
         'id' => 2,
-        'nama' => 'Premium Haircut & Wash',
-        'kategori' => 'Haircut',
-        'harga' => 65000,
-        'durasi' => 45,
-        'populer' => true,
+        'nama' => 'Gentleman Cut & Wash',
+        'kategori' => 'Potong Rambut',
+        'harga' => 50000,
+        'durasi_menit' => 45,
+        'populer' => true
     ],
     [
         'id' => 3,
-        'nama' => 'Kids Haircut',
-        'kategori' => 'Haircut',
-        'harga' => 35000,
-        'durasi' => 25,
-        'populer' => false,
+        'nama' => 'Beard Trim & Styling',
+        'kategori' => 'Perawatan Kumis/Jenggot',
+        'harga' => 25000,
+        'durasi_menit' => 20,
+        'populer' => false
     ],
     [
         'id' => 4,
-        'nama' => 'Beard Trim & Shape',
-        'kategori' => 'Grooming',
-        'harga' => 25000,
-        'durasi' => 20,
-        'populer' => false,
+        'nama' => 'Hair Coloring Basic',
+        'kategori' => 'Pewarnaan',
+        'harga' => 85000,
+        'durasi_menit' => 60,
+        'populer' => false
     ],
     [
         'id' => 5,
-        'nama' => 'Executive Full Grooming',
-        'kategori' => 'Grooming',
-        'harga' => 90000,
-        'durasi' => 60,
-        'populer' => true,
+        'nama' => 'Hot Towel Royal Shave',
+        'kategori' => 'Perawatan Kumis/Jenggot',
+        'harga' => 40000,
+        'durasi_menit' => 30,
+        'populer' => false
     ],
     [
         'id' => 6,
-        'nama' => 'Hair Coloring Black/Brown',
-        'kategori' => 'Coloring',
-        'harga' => 120000,
-        'durasi' => 60,
-        'populer' => false,
+        'nama' => 'Junior Cut (Anak-anak)',
+        'kategori' => 'Potong Rambut',
+        'harga' => 30000,
+        'durasi_menit' => 25,
+        'populer' => false
     ],
     [
         'id' => 7,
-        'nama' => 'Basic Hair Bleaching',
-        'kategori' => 'Coloring',
-        'harga' => 150000,
-        'durasi' => 75,
-        'populer' => false,
+        'nama' => 'Creambath & Head Massage',
+        'kategori' => 'Perawatan Kepala',
+        'harga' => 60000,
+        'durasi_menit' => 40,
+        'populer' => true
     ],
     [
         'id' => 8,
-        'nama' => 'Head Scalp Massage',
-        'kategori' => 'Grooming',
-        'harga' => 50000,
-        'durasi' => 30,
-        'populer' => false,
-    ],
+        'nama' => 'Full Grooming Package',
+        'kategori' => 'Paket Hemat',
+        'harga' => 100000,
+        'durasi_menit' => 75,
+        'populer' => true
+    ]
 ];
