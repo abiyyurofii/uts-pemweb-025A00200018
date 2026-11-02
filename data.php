@@ -10,6 +10,8 @@ $services = [
         'durasi_menit' => 25,
         'populer' => false,
         'tersedia' => true,
+        'gambar' => 'assets/potongan rambut.jpg',
+        'alt' => 'Potongan Rambut Basic',
     ],
     [
         'id' => 2,
@@ -19,6 +21,8 @@ $services = [
         'durasi_menit' => 30,
         'populer' => true,
         'tersedia' => true,
+        'gambar' => 'assets/potongan rambut.jpg',
+        'alt' => 'Potongan Rambut Pro',
     ],
     [
         'id' => 3,
@@ -28,6 +32,8 @@ $services = [
         'durasi_menit' => 60,
         'populer' => false,
         'tersedia' => true,
+        'gambar' => 'assets/potongan rambut.jpg',
+        'alt' => 'Potongan Rambut Premium',
     ],
     [
         'id' => 4,
@@ -37,6 +43,8 @@ $services = [
         'durasi_menit' => 45,
         'populer' => false,
         'tersedia' => true,
+        'gambar' => 'assets/treatment.jpg',
+        'alt' => 'Potongan Rambut Creambath',
     ],
     [
         'id' => 5,
@@ -46,6 +54,8 @@ $services = [
         'durasi_menit' => 120,
         'populer' => true,
         'tersedia' => true,
+        'gambar' => 'assets/coloring.jpg',
+        'alt' => 'Potongan Rambut Color + Bleaching',
     ],
     [
         'id' => 6,
@@ -55,6 +65,8 @@ $services = [
         'durasi_menit' => 120,
         'populer' => false,
         'tersedia' => true,
+        'gambar' => 'assets/cornrows.jpg',
+        'alt' => 'Potongan Rambut Cornrows',
     ],
     [
         'id' => 7,
@@ -64,6 +76,8 @@ $services = [
         'durasi_menit' => 90,
         'populer' => true,
         'tersedia' => true,
+        'gambar' => 'assets/perming.jpg',
+        'alt' => 'Potongan Rambut Perming',
     ],
     [
         'id' => 8,
@@ -72,6 +86,8 @@ $services = [
         'harga' => 45000,
         'durasi_menit' => 30,
         'populer' => false,
-        'tersedia' => false, 
+        'tersedia' => false,
+        'gambar' => 'assets/treatment.jpg',
+        'alt' => 'Potongan Rambut Hairspa',
     ],
 ];

@@ -5,9 +5,7 @@ require_once 'data.php';
 require_once 'functions.php';
 
 $sort = $_GET['sort'] ?? 'default';
-
 $stats = hitungStatistikKatalog($services);
-
 $displayedServices = urutkanLayanan($services, $sort);
 ?>
 <!DOCTYPE html>
@@ -47,8 +45,8 @@ $displayedServices = urutkanLayanan($services, $sort);
             <div class="stat-card">
                 <h3>Harga Termurah</h3>
                 <p>
-                    <?php if ($stats['termurah'] !== null): ?>
-                        <?= e(formatRupiah((int)$stats['termurah']['harga'])); ?>
+                    <?php if ($stats['termurah'] > 0): ?>
+                        <?= e(formatRupiah((int)$stats['termurah'])); ?>
                     <?php else: ?>
                         -
                     <?php endif; ?>
@@ -56,10 +54,10 @@ $displayedServices = urutkanLayanan($services, $sort);
             </div>
         </section>
 
-        <section class="filter-box" style="margin-bottom: 20px; text-align: right;">
+        <section class="filter-box">
             <form method="GET" action="katalog.php">
-                <label for="sort" style="color: #ccc; font-weight: bold; margin-right: 8px;">Urutkan Harga:</label>
-                <select name="sort" id="sort" onchange="this.form.submit()" style="padding: 6px 12px; background: #222; color: #fff; border: 1px solid #d4af37; border-radius: 4px; cursor: pointer;">
+                <label for="sort" class="filter-label">Urutkan Harga:</label>
+                <select name="sort" id="sort" class="filter-select" onchange="this.form.submit()">
                     <option value="default" <?= $sort === 'default' ? 'selected' : ''; ?>>-- Default --</option>
                     <option value="termurah" <?= $sort === 'termurah' ? 'selected' : ''; ?>>Harga Termurah</option>
                     <option value="termahal" <?= $sort === 'termahal' ? 'selected' : ''; ?>>Harga Termahal</option>
@@ -70,7 +68,11 @@ $displayedServices = urutkanLayanan($services, $sort);
         <section class="grid-katalog">
             <?php foreach ($displayedServices as $item): ?>
                 <article class="card-layanan">
-                    <div>
+                    <div class="card-img-container">
+                        <img src="<?= e($item['gambar']); ?>" alt="<?= e($item['alt']); ?>" class="card-img">
+                    </div>
+
+                    <div class="card-content">
                         <?php if ($item['populer']): ?>
                             <span class="badge badge-bestseller">★ POPULER</span>
                         <?php endif; ?>

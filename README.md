@@ -10,17 +10,24 @@ Mekarya Barbershop adalah aplikasi website profil dan katalog layanan dinamis be
 Dengan menggunakan perintah php -S localhost:8000 di terminal. Kemudian akan muncul link dari program tersebut.
 
 ## 4. Daftar Fitur & Penanganan Kode
-uts-pemweb-NIM/
-├── assets/
-│   └── logo.png              <-- Menyiimpan logo Mekarya Barbershop
-├── screenshots/              <-- Tempat menyimpan screenshot untuk README
-├── .gitignore                <-- Konfigurasi Git ignore
-├── data.php                  <-- Array multidimensi 8 item data layanan
-├── functions.php             <-- Fungsi buatan sendiri & fungsi array bawaan
-├── index.php                 <-- Halaman profil usaha
-├── katalog.php               <-- Halaman katalog dinamis & statistik
-├── README.md                 <-- Dokumentasi proyek UTS
-└── style.css                 <-- Styling CSS eksternal
+-assets/
+Untuk Menyiimpan logo Mekarya Barbershop dan foto foto model layanan oitingan rambut
+-screenshots/              
+Tempat menyimpan screenshot untuk README
+-.gitignore                
+Konfigurasi Git ignore
+-data.php                  
+Array multidimensi 8 item data layanan
+-functions.php             
+Fungsi buatan sendiri & fungsi array bawaan
+-index.php                 
+Halaman profil usaha
+-katalog.php               
+Halaman katalog dinamis & statistik
+-README.md                 
+Dokumentasi proyek UTS
+-style.css                 
+Styling CSS eksternal
 
 
 ## 5. Daftar Fungsi Array Bawaan PHP
@@ -37,6 +44,10 @@ uts-pemweb-NIM/
 [Tampilan Halaman Katalog]
 ![alt text](<screenshots/Halaman Katalog 1.png>)
 ![alt text](<screenshots/Halaman Katalog 2.png>)
+
+[Perbaikan Halaman Katalog]
+![alt text](<screenshots/Perbaikan Halaman Katalog.png>)
+
 
 
 ## 7. Sumber Referensi & Catatan AI

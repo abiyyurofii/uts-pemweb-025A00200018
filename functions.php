@@ -14,7 +14,7 @@ function hitungStatistikKatalog(array $dataLayanan): array {
         return [
             'total_layanan' => 0,
             'layanan_tersedia' => 0,
-            'termurah' => null,
+            'termurah' => 0,
         ];
     }
 
@@ -24,16 +24,13 @@ function hitungStatistikKatalog(array $dataLayanan): array {
         return $item['tersedia'] === true;
     }));
 
-    $dataUrut = $dataLayanan;
-    usort($dataUrut, function (array $a, array $b): int {
-        return $a['harga'] <=> $b['harga'];
-    });
-    $layananTermurah = $dataUrut[0];
+    $daftarHarga = array_column($dataLayanan, 'harga');
+    $hargaTermurah = min($daftarHarga);
 
     return [
         'total_layanan' => $totalLayanan,
         'layanan_tersedia' => $layananTersedia,
-        'termurah' => $layananTermurah,
+        'termurah' => $hargaTermurah,
     ];
 }
 
