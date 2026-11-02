@@ -12,20 +12,28 @@ Dengan menggunakan perintah php -S localhost:8000 di terminal. Kemudian akan mun
 ## 4. Daftar Fitur & Penanganan Kode
 -assets/
 Untuk Menyiimpan logo Mekarya Barbershop dan foto foto model layanan oitingan rambut
+
 -screenshots/              
 Tempat menyimpan screenshot untuk README
+
 -.gitignore                
 Konfigurasi Git ignore
+
 -data.php                  
 Array multidimensi 8 item data layanan
+
 -functions.php             
 Fungsi buatan sendiri & fungsi array bawaan
+
 -index.php                 
 Halaman profil usaha
+
 -katalog.php               
 Halaman katalog dinamis & statistik
+
 -README.md                 
 Dokumentasi proyek UTS
+
 -style.css                 
 Styling CSS eksternal
 
