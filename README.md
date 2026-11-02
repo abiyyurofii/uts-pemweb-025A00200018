@@ -10,16 +10,17 @@ Mekarya Barbershop adalah aplikasi website profil dan katalog layanan dinamis be
 Dengan menggunakan perintah php -S localhost:8000 di terminal. Kemudian akan muncul link dari program tersebut.
 
 ## 4. Daftar Fitur & Penanganan Kode
-
-| Fitur | File Terkait | Fungsi / Logika Penangan |
-| :--- | :--- | :--- |
-| Halaman Profil Barbershop | `index.php` | Menampilkan informasi usaha, jam operasional, alamat, dan kontak. |
-| Katalog Layanan Dinamis | `katalog.php` | Melakukan rendering array multidimensi menggunakan perulangan `foreach`. |
-| Format Mata Uang Rupiah | `functions.php` | `formatRupiah(int $nominal): string` |
-| Badge Status Layanan | `functions.php` | `dapatkanBadge(bool $populer): string` (menggunakan percabangan `if` / `match`). |
-| Pengurutan Layanan (Sorting) | `functions.php` | `urutkanLayanan(array $data, string $berdasarkan): array` (menggunakan `usort` & operator spaceship `<=>`). |
-| Ringkasan Statistik Data | `katalog.php` | Perhitungan total item, rata-rata harga, serta item termahal dan termurah. |
-| Keamanan Output HTML | `functions.php` / `katalog.php` | Penggunaan `htmlspecialchars()` / fungsi pembungkus `e()`. |
+uts-pemweb-NIM/
+├── assets/
+│   └── logo.png              <-- Menyiimpan logo Mekarya Barbershop
+├── screenshots/              <-- Tempat menyimpan screenshot untuk README
+├── .gitignore                <-- Konfigurasi Git ignore
+├── data.php                  <-- Array multidimensi 8 item data layanan
+├── functions.php             <-- Fungsi buatan sendiri & fungsi array bawaan
+├── index.php                 <-- Halaman profil usaha
+├── katalog.php               <-- Halaman katalog dinamis & statistik
+├── README.md                 <-- Dokumentasi proyek UTS
+└── style.css                 <-- Styling CSS eksternal
 
 
 ## 5. Daftar Fungsi Array Bawaan PHP
@@ -30,16 +31,16 @@ Dengan menggunakan perintah php -S localhost:8000 di terminal. Kemudian akan mun
 
 ## 6. Tangkapan Layar (Screenshots)
 [Tampilan Halaman Profil]
-(assets/![alt text](<screenshots/Pasted 2026-11-01 at 4.16.54 PM.png>))
+![alt text](<screenshots/Halaman Profil 1.png>)
+![alt text](<screenshots/Halaman Profil 2.png>)
 
 [Tampilan Halaman Katalog]
-(assets/![alt text](<screenshots/Pasted 2026-11-01 at 4.17.15 PM.png>))
-
-(assets/![alt text](<screenshots/Pasted 2026-11-01 at 4.22.26 PM.png>))
+![alt text](<screenshots/Halaman Katalog 1.png>)
+![alt text](<screenshots/Halaman Katalog 2.png>)
 
 
 ## 7. Sumber Referensi & Catatan AI
-Sumber Referensi
-Pratikum 
+Sumber Referensi: Pratikum 1-6
 
 Catatan Penggunaan AI
+Untuk diskusi, untuk membantu perbaikan tampilan web dan untuk melakukan pengecekan kelengkapan sesuai syarat pada file proyek UTS.

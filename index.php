@@ -15,7 +15,7 @@ require_once 'functions.php';
     <header>
         <div class="container">
             <div class="logo-container">
-                <img src="assets/WhatsApp Image 2026-10-31 at 15.38.09.jpeg" alt="Logo Mekarya Barbershop" class="logo-img">
+                <img src="assets/Logo Barbershop.jpeg" alt="Logo Mekarya Barbershop" class="logo-img">
             </div>
             <h1>Mekarya Barbershop</h1>
             <p>Best Haircut On Request</p>
@@ -40,6 +40,16 @@ require_once 'functions.php';
             <ul>
                 <li><strong>Senin - Minggu:</strong> 10.00 - 22.00 WIB</li>
                 <li><strong>Lokasi:</strong> Karanganyar, Jawa Tengah</li>
+            </ul>
+        </section>
+
+        <section class="profile-card">
+            <h2>Fasilitas Unggulan</h2>
+            <ul>
+                <li>Ruangan Full AC & Ruang Tunggu Modern</li>
+                <li>Kapster Profesional & Berpengalaman</li>
+                <li>Peralatan Steril & Higienis</li>
+                <li>Free Wi-Fi</li>
             </ul>
         </section>
     </main>

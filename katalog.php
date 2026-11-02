@@ -23,7 +23,7 @@ $displayedServices = urutkanLayanan($services, $sort);
     <header>
         <div class="container">
             <div class="logo-container">
-                <img src="assets/WhatsApp Image 2026-10-31 at 15.38.09.jpeg" alt="Logo Mekarya Barbershop" class="logo-img">
+                <img src="assets/Logo Barbershop.jpeg" alt="Logo Mekarya Barbershop" class="logo-img">
             </div>
             <h1>Mekarya Barbershop</h1>
             <p>Daftar Layanan & Paket Perawatan</p>
@@ -35,7 +35,6 @@ $displayedServices = urutkanLayanan($services, $sort);
     </header>
 
     <main class="container">
-        <!-- Ringkasan Statistik -->
         <section class="stats-grid">
             <div class="stat-card">
                 <h3>Total Layanan</h3>
@@ -57,7 +56,6 @@ $displayedServices = urutkanLayanan($services, $sort);
             </div>
         </section>
 
-        <!-- Fitur Filter / Urutkan Harga -->
         <section class="filter-box" style="margin-bottom: 20px; text-align: right;">
             <form method="GET" action="katalog.php">
                 <label for="sort" style="color: #ccc; font-weight: bold; margin-right: 8px;">Urutkan Harga:</label>
@@ -69,17 +67,14 @@ $displayedServices = urutkanLayanan($services, $sort);
             </form>
         </section>
 
-        <!-- Render Katalog Dinamis -->
         <section class="grid-katalog">
             <?php foreach ($displayedServices as $item): ?>
                 <article class="card-layanan">
                     <div>
-                        <!-- Percabangan 1: Badge Populer -->
                         <?php if ($item['populer']): ?>
                             <span class="badge badge-bestseller">★ POPULER</span>
                         <?php endif; ?>
 
-                        <!-- Percabangan 2: Status Ketersediaan -->
                         <?php
                         $statusBadgeClass = match($item['tersedia']) {
                             true => 'badge-tersedia',
