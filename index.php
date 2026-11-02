@@ -7,33 +7,48 @@ require_once 'functions.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - BarberStudio</title>
+    <title>Profil - Mekarya Barbershop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>BarberStudio Premium</h1>
-        <nav>
-            <a href="index.php">Profil</a>
-            <a href="katalog.php">Katalog Layanan</a>
-        </nav>
+        <div class="container">
+            <div class="logo-container">
+                <img src="assets/WhatsApp Image 2026-10-31 at 15.38.09.jpeg" alt="Logo Mekarya Barbershop" class="logo-img">
+            </div>
+            <h1>Mekarya Barbershop</h1>
+            <p>Best Haircut On Request</p>
+            <nav>
+                <a href="index.php" class="active">Profil Usaha</a>
+                <a href="katalog.php">Katalog Layanan</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="container">
-            <h2>Tentang BarberStudio</h2>
-            <p>BarberStudio adalah tempat perawatan rambut dan gaya pria modern yang mengedepankan kualitas pengerjaan dan kenyamanan pelanggan.</p>
+    <main class="container">
+        <section class="profile-card">
+            <h2>Tentang Mekarya Barbershop</h2>
+            <p>
+                Mekarya Barbershop menyajikan pemotongan dan perawatan rambut pria terbaik. 
+                Sesuai dengan motto kami <em>"Best Haircut On Request"</em>, kami siap mewujudkan gaya rambut impian Anda dengan teknik presisi tinggi dan produk berkualitas.
+            </p>
+        </section>
 
-            <h3 style="margin-top: 15px;">Jam Operasional</h3>
+        <section class="profile-card">
+            <h2>Jam Operasional & Lokasi</h2>
             <ul>
-                <li>Senin - Jumat: 09:00 - 21:00 WIB</li>
-                <li>Sabtu - Minggu: 08:00 - 22:00 WIB</li>
+                <li><strong>Senin - Minggu:</strong> 10.00 - 22.00 WIB</li>
+                <li><strong>Lokasi:</strong> Karanganyar, Jawa Tengah</li>
             </ul>
         </section>
     </main>
 
-    <footer style=""> 
-        <p>&copy; 2026 BarberStudio UTS Pemweb</p>
+    <footer>
+        <div class="container">
+            <p>&copy; <?= e((string)date('Y')); ?> Mekarya Barbershop. All rights reserved.</p>
+        </div>
     </footer>
+
 </body>
 </html>

@@ -1,72 +1,112 @@
 <?php
 declare(strict_types=1);
+
 require_once 'data.php';
 require_once 'functions.php';
 
-// Tangkap opsi sorting dari URL (default: harga_asc)
-$sort = $_GET['sort'] ?? 'harga_asc';
-$data_terurut = urutkanLayanan($layanan_barbershop, $sort);
-$ringkasan = hitungRingkasan($layanan_barbershop);
+$sort = $_GET['sort'] ?? 'default';
+
+$stats = hitungStatistikKatalog($services);
+
+$displayedServices = urutkanLayanan($services, $sort);
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Katalog Layanan - Barbershop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Layanan - Mekarya Barbershop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Katalog Layanan Barbershop</h1>
-        <nav>
-            <a href="index.php">Profil Kami</a>
-            <a href="katalog.php">Katalog Layanan</a>
-        </nav>
+        <div class="container">
+            <div class="logo-container">
+                <img src="assets/WhatsApp Image 2026-10-31 at 15.38.09.jpeg" alt="Logo Mekarya Barbershop" class="logo-img">
+            </div>
+            <h1>Mekarya Barbershop</h1>
+            <p>Daftar Layanan & Paket Perawatan</p>
+            <nav>
+                <a href="index.php">Profil Usaha</a>
+                <a href="katalog.php" class="active">Katalog Layanan</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="container">
-            <h2>Daftar Layanan</h2>
-            
-            <!-- Form Pengurutan (Sorting) -->
+    <main class="container">
+        <!-- Ringkasan Statistik -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Layanan</h3>
+                <p><?= e((string)$stats['total_layanan']); ?> Paket</p>
+            </div>
+            <div class="stat-card">
+                <h3>Layanan Tersedia</h3>
+                <p><?= e((string)$stats['layanan_tersedia']); ?> Tersedia</p>
+            </div>
+            <div class="stat-card">
+                <h3>Harga Termurah</h3>
+                <p>
+                    <?php if ($stats['termurah'] !== null): ?>
+                        <?= e(formatRupiah((int)$stats['termurah']['harga'])); ?>
+                    <?php else: ?>
+                        -
+                    <?php endif; ?>
+                </p>
+            </div>
+        </section>
+
+        <!-- Fitur Filter / Urutkan Harga -->
+        <section class="filter-box" style="margin-bottom: 20px; text-align: right;">
             <form method="GET" action="katalog.php">
-                <label for="sort">Urutkan Berdasarkan:</label>
-                <select name="sort" id="sort" onchange="this.form.submit()">
-                    <option value="harga_asc" <?= $sort === 'harga_asc' ? 'selected' : '' ?>>Harga Termurah</option>
-                    <option value="harga_desc" <?= $sort === 'harga_desc' ? 'selected' : '' ?>>Harga Termahal</option>
-                    <option value="nama_asc" <?= $sort === 'nama_asc' ? 'selected' : '' ?>>Nama (A-Z)</option>
+                <label for="sort" style="color: #ccc; font-weight: bold; margin-right: 8px;">Urutkan Harga:</label>
+                <select name="sort" id="sort" onchange="this.form.submit()" style="padding: 6px 12px; background: #222; color: #fff; border: 1px solid #d4af37; border-radius: 4px; cursor: pointer;">
+                    <option value="default" <?= $sort === 'default' ? 'selected' : ''; ?>>-- Default --</option>
+                    <option value="termurah" <?= $sort === 'termurah' ? 'selected' : ''; ?>>Harga Termurah</option>
+                    <option value="termahal" <?= $sort === 'termahal' ? 'selected' : ''; ?>>Harga Termahal</option>
                 </select>
             </form>
+        </section>
 
-            <!-- Ringkasan Perhitungan -->
-            <div class="ringkasan-box">
-                <p>Total Jenis Layanan: <strong><?= $ringkasan['total_layanan'] ?></strong></p>
-                <p>Rata-rata Harga: <strong><?= formatRupiah($ringkasan['rata_rata_harga']) ?></strong></p>
-            </div>
-
-            <!-- Grid Layanan -->
-            <div class="card-grid">
-                <?php foreach ($data_terurut as $item): ?>
-                    <div class="card">
-                        <h3><?= e($item['nama']) ?></h3>
-                        <p>Kategori: <?= e($item['kategori']) ?></p>
-                        <p>Durasi: <?= $item['durasi_menit'] ?> Menit</p>
-                        <p class="harga"><?= formatRupiah($item['harga']) ?></p>
-                        
-                        <!-- Percabangan untuk label/badge populer -->
+        <!-- Render Katalog Dinamis -->
+        <section class="grid-katalog">
+            <?php foreach ($displayedServices as $item): ?>
+                <article class="card-layanan">
+                    <div>
+                        <!-- Percabangan 1: Badge Populer -->
                         <?php if ($item['populer']): ?>
-                            <span class="badge populer">Favorit</span>
-                        <?php else: ?>
-                            <span class="badge standar">Standar</span>
+                            <span class="badge badge-bestseller">★ POPULER</span>
                         <?php endif; ?>
+
+                        <!-- Percabangan 2: Status Ketersediaan -->
+                        <?php
+                        $statusBadgeClass = match($item['tersedia']) {
+                            true => 'badge-tersedia',
+                            false => 'badge-tutup',
+                        };
+                        $statusLabel = match($item['tersedia']) {
+                            true => 'Tersedia',
+                            false => 'Tutup',
+                        };
+                        ?>
+                        <span class="badge <?= e($statusBadgeClass); ?>"><?= e($statusLabel); ?></span>
+                        <span class="badge badge-kategori"><?= e($item['kategori']); ?></span>
+
+                        <h2><?= e($item['nama']); ?></h2>
+                        <p class="price-tag"><?= e(formatRupiah($item['harga'])); ?></p>
+                        <p><small>⏱ Durasi: <?= e((string)$item['durasi_menit']); ?> Menit</small></p>
                     </div>
-                <?php endforeach; ?>
-            </div>
+                </article>
+            <?php endforeach; ?>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Barbershop UTS Pemweb</p>
-   </footer>
+        <div class="container">
+            <p>&copy; <?= e((string)date('Y')); ?> Mekarya Barbershop. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

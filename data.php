@@ -1,68 +1,77 @@
 <?php
 declare(strict_types=1);
-$layanan_barbershop = [
+
+$services = [
     [
         'id' => 1,
-        'nama' => 'Classic Haircut',
-        'kategori' => 'Potong Rambut',
-        'harga' => 35000,
-        'durasi_menit' => 30,
-        'populer' => true
+        'nama' => 'Basic',
+        'kategori' => 'Haircut',
+        'harga' => 25000,
+        'durasi_menit' => 25,
+        'populer' => false,
+        'tersedia' => true,
     ],
     [
         'id' => 2,
-        'nama' => 'Gentleman Cut & Wash',
-        'kategori' => 'Potong Rambut',
-        'harga' => 50000,
-        'durasi_menit' => 45,
-        'populer' => true
+        'nama' => 'Pro',
+        'kategori' => 'Haircut',
+        'harga' => 40000,
+        'durasi_menit' => 30,
+        'populer' => true,
+        'tersedia' => true,
     ],
     [
         'id' => 3,
-        'nama' => 'Beard Trim & Styling',
-        'kategori' => 'Perawatan Kumis/Jenggot',
-        'harga' => 25000,
-        'durasi_menit' => 20,
-        'populer' => false
+        'nama' => 'Premium',
+        'kategori' => 'Haircut',
+        'harga' => 70000,
+        'durasi_menit' => 60,
+        'populer' => false,
+        'tersedia' => true,
     ],
     [
         'id' => 4,
-        'nama' => 'Hair Coloring Basic',
-        'kategori' => 'Pewarnaan',
-        'harga' => 85000,
-        'durasi_menit' => 60,
-        'populer' => false
+       'nama' => 'Creambath',
+        'kategori' => 'Treatment',
+        'harga' => 50000,
+        'durasi_menit' => 45,
+        'populer' => false,
+        'tersedia' => true,
     ],
     [
         'id' => 5,
-        'nama' => 'Hot Towel Royal Shave',
-        'kategori' => 'Perawatan Kumis/Jenggot',
-        'harga' => 40000,
-        'durasi_menit' => 30,
-        'populer' => false
+        'nama' => 'Hair Color + Bleaching',
+        'kategori' => 'Coloring',
+        'harga' => 150000,
+        'durasi_menit' => 120,
+        'populer' => true,
+        'tersedia' => true,
     ],
     [
         'id' => 6,
-        'nama' => 'Junior Cut (Anak-anak)',
-        'kategori' => 'Potong Rambut',
-        'harga' => 30000,
-        'durasi_menit' => 25,
-        'populer' => false
+        'nama' => 'Cornrows',
+        'kategori' => 'Make Over Style',
+        'harga' => 350000,
+        'durasi_menit' => 120,
+        'populer' => false,
+        'tersedia' => true,
     ],
     [
         'id' => 7,
-        'nama' => 'Creambath & Head Massage',
-        'kategori' => 'Perawatan Kepala',
-        'harga' => 60000,
-        'durasi_menit' => 40,
-        'populer' => true
+        'nama' => 'Perming',
+        'kategori' => 'Make Over Style',
+        'harga' => 300000,
+        'durasi_menit' => 90,
+        'populer' => true,
+        'tersedia' => true,
     ],
     [
         'id' => 8,
-        'nama' => 'Full Grooming Package',
-        'kategori' => 'Paket Hemat',
-        'harga' => 100000,
-        'durasi_menit' => 75,
-        'populer' => true
-    ]
+        'nama' => 'Hairspa',
+        'kategori' => 'Treatment',
+        'harga' => 45000,
+        'durasi_menit' => 30,
+        'populer' => false,
+        'tersedia' => false, 
+    ],
 ];
